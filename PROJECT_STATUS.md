@@ -1,5 +1,7 @@
 # Project Status Report
 
+> **Language (语言)**: English | [简体中文](PROJECT_STATUS.zh.md)
+
 **Last Updated**: 2026-01-07
 **Completion**: 100% (7/7 stages complete)
 **Status**: 🎉 PROJECT COMPLETE - Ready for Launch! 🚀

@@ -1,5 +1,7 @@
 # Advanced Usage Guide
 
+> **Language (语言)**: English | [简体中文](06-advanced-usage.zh.md)
+
 **Unlock Claude Code's full potential with advanced techniques and workflows**
 
 ---

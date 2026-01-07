@@ -1,5 +1,7 @@
 # Token Optimization for Claude Code
 
+> **Language (语言)**: English | [简体中文](03-token-optimization.zh.md)
+
 Strategies to maximize efficiency and minimize costs when using Claude Code in large codebases.
 
 ## Table of Contents

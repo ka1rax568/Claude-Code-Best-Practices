@@ -1,5 +1,7 @@
 # Claude Code Best Practices
 
+> **Language (语言)**: English | [简体中文](README.zh.md)
+
 > A production-grade guide and toolkit for mastering Claude Code in professional software development
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

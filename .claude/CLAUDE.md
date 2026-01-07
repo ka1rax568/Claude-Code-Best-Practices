@@ -1,5 +1,7 @@
 # Claude Code Best Practices - Project Context
 
+> **Language (语言)**: English | [简体中文](CLAUDE.zh.md)
+
 This document provides comprehensive context for Claude Code when working on this project. It defines our coding standards, development workflows, and best practices.
 
 ---

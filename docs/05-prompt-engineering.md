@@ -1,5 +1,7 @@
 # Prompt Engineering Guide
 
+> **Language (语言)**: English | [简体中文](05-prompt-engineering.zh.md)
+
 **Master the art of communicating with Claude Code for maximum productivity**
 
 ---

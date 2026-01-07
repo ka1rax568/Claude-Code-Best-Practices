@@ -1,5 +1,7 @@
 # Git Workflow Guide
 
+> **Language (语言)**: English | [简体中文](04-git-workflow.zh.md)
+
 **Master Git workflows with Claude Code for professional version control practices**
 
 ---

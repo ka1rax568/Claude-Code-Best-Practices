@@ -1,5 +1,7 @@
 # Project Development Plan
 
+> **Language (语言)**: English | [简体中文](PLAN.zh.md)
+
 ## Overview
 
 This document outlines the comprehensive development roadmap for the **Claude Code Best Practices** project. The plan is divided into seven distinct stages, each building upon the previous to create a production-grade resource for professional developers.
