@@ -51,7 +51,7 @@ Instances of unacceptable behavior may be reported to the project maintainers. A
 
 **Before submitting a bug report:**
 
-- Check the [existing issues](https://github.com/yourusername/Claude-Code-Best-Practices/issues) to avoid duplicates
+- Check the [existing issues](https://github.com/ka1rax568/Claude-Code-Best-Practices/issues) to avoid duplicates
 - Collect relevant information (OS, Node.js version, Claude Code version, error messages)
 
 **When submitting a bug report, include:**
@@ -479,7 +479,7 @@ Added examples for:
 
 ### Creating the Pull Request
 
-1. Go to the [original repository](https://github.com/yourusername/Claude-Code-Best-Practices)
+1. Go to the [original repository](https://github.com/ka1rax568/Claude-Code-Best-Practices)
 2. Click "New Pull Request"
 3. Select your fork and branch
 4. Fill out the PR template:
@@ -653,8 +653,8 @@ describe("FeatureName", () => {
 
 ## Questions?
 
-- **GitHub Discussions**: [Ask a question](https://github.com/yourusername/Claude-Code-Best-Practices/discussions)
-- **Issues**: [Report a bug or suggest a feature](https://github.com/yourusername/Claude-Code-Best-Practices/issues)
+- **GitHub Discussions**: [Ask a question](https://github.com/ka1rax568/Claude-Code-Best-Practices/discussions)
+- **Issues**: [Report a bug or suggest a feature](https://github.com/ka1rax568/Claude-Code-Best-Practices/issues)
 
 ---
 

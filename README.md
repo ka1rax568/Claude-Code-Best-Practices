@@ -63,11 +63,11 @@
 
 ### Installation
 
-> **Note**: Replace `yourusername` with your actual GitHub username after creating the repository.
+> **Note**: Replace `ka1rax568` with your actual GitHub username after creating the repository.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/Claude-Code-Best-Practices.git
+git clone https://github.com/ka1rax568/Claude-Code-Best-Practices.git
 cd Claude-Code-Best-Practices
 
 # Install dependencies
@@ -167,9 +167,9 @@ See [PLAN.md](PLAN.md) for detailed development stages:
 
 ## 💬 Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/Claude-Code-Best-Practices/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/Claude-Code-Best-Practices/discussions)
-- **Twitter**: [@yourusername](https://twitter.com/yourusername)
+- **Issues**: [GitHub Issues](https://github.com/ka1rax568/Claude-Code-Best-Practices/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/ka1rax568/Claude-Code-Best-Practices/discussions)
+- **Twitter**: [@ka1rax568](https://twitter.com/ka1rax568)
 
 ---
 

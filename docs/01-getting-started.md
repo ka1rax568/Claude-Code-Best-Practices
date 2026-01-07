@@ -59,7 +59,7 @@ Before you begin, ensure you have:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/Claude-Code-Best-Practices.git
+git clone https://github.com/ka1rax568/Claude-Code-Best-Practices.git
 
 # Navigate to the directory
 cd Claude-Code-Best-Practices
@@ -557,8 +557,8 @@ dist/
 
 ### Community
 
-- [GitHub Discussions](https://github.com/yourusername/Claude-Code-Best-Practices/discussions)
-- [GitHub Issues](https://github.com/yourusername/Claude-Code-Best-Practices/issues)
+- [GitHub Discussions](https://github.com/ka1rax568/Claude-Code-Best-Practices/discussions)
+- [GitHub Issues](https://github.com/ka1rax568/Claude-Code-Best-Practices/issues)
 
 ### Learning Resources
 
@@ -590,4 +590,4 @@ vim .claude/.claudeignore    # Edit file exclusions
 
 **Next**: [Security Best Practices](02-security-best-practices.md) →
 
-**Need help?** Open an issue on [GitHub](https://github.com/yourusername/Claude-Code-Best-Practices/issues)
+**Need help?** Open an issue on [GitHub](https://github.com/ka1rax568/Claude-Code-Best-Practices/issues)
