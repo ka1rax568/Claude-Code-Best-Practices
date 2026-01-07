@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "version": "1.0.0",
+  "denyList": [
+    ".env",
+    ".env.*",
+    "*.pem",
+    "*.key",
+    "*.p12",
+    "*.pfx",
+    "*.keystore",
+    "credentials.json",
+    "secrets.json",
+    "secrets/",
+    ".secrets/",
+    "*.crt",
+    "*.der",
+    "id_rsa",
+    "id_dsa",
+    "*.ppk",
+    "auth.json",
+    "serviceAccount.json",
+    ".aws/credentials",
+    ".npmrc",
+    ".yarnrc",
+    "*.backup",
+    "*.bak",
+    ".history/"
+  ],
+  "allowList": [
+    ".env.example",
+    "*.md",
+    "package.json",
+    "tsconfig.json",
+    "jest.config.js",
+    "*.config.js",
+    "*.js",
+    "*.ts",
+    "*.jsx",
+    "*.tsx"
+  ],
+  "fileOperations": {
+    "read": {
+      "enabled": true,
+      "maxFileSize": "1MB"
+    },
+    "write": {
+      "enabled": true,
+      "requireConfirmation": false
+    },
+    "delete": {
+      "enabled": false
+    }
+  },
+  "tools": {
+    "bash": {
+      "enabled": true,
+      "allowedCommands": [
+        "git",
+        "npm",
+        "node",
+        "jest",
+        "eslint",
+        "prettier",
+        "find",
+        "grep",
+        "ls",
+        "cat",
+        "mkdir"
+      ],
+      "deniedCommands": ["rm -rf /", "sudo", "dd", "mkfs", "> /dev/"],
+      "notes": "curl and wget are allowed for API testing and downloads. Destructive commands are blocked."
+    },
+    "web": {
+      "enabled": false
+    }
+  },
+  "security": {
+    "preventSecretsInOutput": true,
+    "redactPatterns": [
+      "(?i)(api[_-]?key|apikey)\\s*[:=]\\s*['\"]?([a-zA-Z0-9_\\-]{20,})['\"]?",
+      "(?i)(secret|password|passwd|pwd)\\s*[:=]\\s*['\"]?([^'\"\\s]{8,})['\"]?",
+      "(?i)(token)\\s*[:=]\\s*['\"]?([a-zA-Z0-9_\\-\\.]{20,})['\"]?",
+      "(?i)(bearer)\\s+([a-zA-Z0-9_\\-\\.]{20,})",
+      "(?i)(client[_-]?secret)\\s*[:=]\\s*['\"]?([a-zA-Z0-9_\\-]{20,})['\"]?",
+      "(?i)(private[_-]?key)\\s*[:=]\\s*['\"]?([^'\"\\s]+)['\"]?"
+    ],
+    "comments": {
+      "pattern1": "Matches API keys and variations (apiKey, api_key, etc.)",
+      "pattern2": "Matches passwords and secrets in various formats",
+      "pattern3": "Matches authentication tokens",
+      "pattern4": "Matches Bearer tokens in Authorization headers",
+      "pattern5": "Matches OAuth client secrets",
+      "pattern6": "Matches private key declarations"
+    }
+  },
+  "context": {
+    "maxTokens": 100000,
+    "summarizeOldMessages": true,
+    "summarizeThreshold": 50000
+  },
+  "preferences": {
+    "codeStyle": "prettier",
+    "testFramework": "jest",
+    "commitMessageFormat": "conventional-commits",
+    "autoFormat": true,
+    "autoLint": false
+  }
+}

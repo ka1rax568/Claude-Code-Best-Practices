@@ -1,0 +1,23 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://github.com/.*/releases/tag/.*$"
+    },
+    {
+      "pattern": "^https://www.amazon.com/.*$"
+    },
+    {
+      "pattern": "^https://example.com.*$"
+    },
+    {
+      "pattern": "^http://localhost.*$"
+    },
+    {
+      "pattern": "^https://martinfowler.com.*$"
+    }
+  ],
+  "timeout": "30s",
+  "retryOn429": true,
+  "retryCount": 3,
+  "aliveStatusCodes": [200, 206, 301, 302, 307, 308]
+}

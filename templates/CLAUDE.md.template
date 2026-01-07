@@ -1,0 +1,407 @@
+# [PROJECT_NAME] - Project Context for Claude Code
+
+This document provides comprehensive context for Claude Code when working on this project. Customize the sections below for your specific project needs.
+
+---
+
+## 📋 Project Overview
+
+**Project Name**: [PROJECT_NAME]
+**Tech Stack**: [e.g., Node.js >= 18.0.0, Python 3.10+, React 18, etc.]
+**Purpose**: [Brief description of what this project does]
+
+### Project Goals
+
+1. **[Goal 1]**: [Description]
+2. **[Goal 2]**: [Description]
+3. **[Goal 3]**: [Description]
+
+### Architecture
+
+```
+[PROJECT_NAME]/
+├── [directory1]/       # [Description]
+├── [directory2]/       # [Description]
+├── [directory3]/       # [Description]
+└── [directory4]/       # [Description]
+```
+
+### Development Philosophy
+
+- **[Principle 1]**: [Description]
+- **[Principle 2]**: [Description]
+- **[Principle 3]**: [Description]
+
+---
+
+## 💻 Coding Standards
+
+### Language-Specific Style Guide
+
+#### Naming Conventions
+
+```[language]
+// Variables and functions: [convention]
+const [example] = '[value]';
+function [exampleFunction]() { }
+
+// Classes and constructors: [convention]
+class [ExampleClass] { }
+
+// Constants: [convention]
+const [EXAMPLE_CONSTANT] = '[value]';
+
+// Private properties: [convention]
+class [ExampleService] {
+  [#privateField] = 'value';
+}
+
+// Boolean variables: [convention]
+const [isActive] = true;
+const [hasPermission] = false;
+```
+
+#### Code Style
+
+```[language]
+// ✅ Good: [description of good practice]
+[code example]
+
+// ❌ Bad: [description of bad practice]
+[code example]
+```
+
+#### File Organization
+
+```[language]
+// 1. Imports: [ordering rules]
+[import examples]
+
+// 2. Constants
+[constant examples]
+
+// 3. Main code
+[code structure]
+
+// 4. Exports
+[export examples]
+```
+
+#### Error Handling
+
+```[language]
+// ✅ Good: [description]
+[error handling example]
+
+// ❌ Bad: [description]
+[bad example]
+```
+
+### Import Ordering Rules
+
+1. [Rule 1]
+2. [Rule 2]
+3. [Rule 3]
+
+---
+
+## 🧪 Testing Standards
+
+### Test-Driven Development (TDD)
+
+#### Phase 1: RED - Write a Failing Test
+
+**Prompt Template:**
+```
+I want to implement [FEATURE]. Following TDD, please:
+
+1. Write a failing test for [SPECIFIC BEHAVIOR]
+2. The test should verify that [EXPECTED OUTCOME]
+3. Use descriptive test names following the pattern: "should [behavior] when [condition]"
+4. Include both happy path and edge cases
+
+Do NOT implement the feature yet - just write the test.
+```
+
+#### Phase 2: GREEN - Make the Test Pass
+
+**Prompt Template:**
+```
+The test is now failing (as expected). Please implement the MINIMUM code required to make this test pass.
+
+Requirements:
+- Focus only on making the test pass
+- Don't add extra features or optimizations
+- Use the simplest solution that works
+```
+
+#### Phase 3: REFACTOR - Improve the Code
+
+**Prompt Template:**
+```
+The tests are passing. Now let's refactor to improve:
+
+1. Code structure and organization
+2. Remove duplication (DRY principle)
+3. Improve naming and clarity
+4. Add proper error handling
+5. Extract reusable functions/classes
+
+Ensure all tests still pass after refactoring.
+```
+
+### Test Structure
+
+```[language]
+describe('[FeatureName]', () => {
+  // Setup
+  beforeEach(() => {
+    // Initialize test data
+  });
+
+  // Teardown
+  afterEach(() => {
+    // Clean up
+  });
+
+  describe('[methodName]', () => {
+    it('should [expected behavior] when [condition]', () => {
+      // Arrange: Set up test data
+      const input = [test data];
+      const expected = [expected result];
+
+      // Act: Execute code under test
+      const actual = [functionUnderTest](input);
+
+      // Assert: Verify results
+      expect(actual).toBe(expected);
+    });
+  });
+});
+```
+
+### Test Naming Conventions
+
+```[language]
+// ✅ Good: descriptive, behavior-focused
+it('should return 404 when [resource] does not exist', () => {});
+it('should create [resource] with [properties]', () => {});
+
+// ❌ Bad: vague, implementation-focused
+it('works', () => {});
+it('test [feature]', () => {});
+```
+
+---
+
+## 🔄 Development Workflows
+
+### Feature Development Workflow
+
+1. **Understand Requirements**
+   - [Step details]
+
+2. **Plan Implementation**
+   - [Step details]
+
+3. **Write Tests (TDD)**
+   - [Step details]
+
+4. **Implement Feature**
+   - [Step details]
+
+5. **Refactor**
+   - [Step details]
+
+6. **Document**
+   - [Step details]
+
+7. **Review**
+   - [Step details]
+
+### Bug Fix Workflow
+
+1. **Reproduce the Bug**
+   - [Step details]
+
+2. **Fix the Bug**
+   - [Step details]
+
+3. **Add Regression Test**
+   - [Step details]
+
+4. **Document the Fix**
+   - [Step details]
+
+---
+
+## 🔐 Security Guidelines
+
+### Input Validation
+
+```[language]
+// ✅ Good: validate all user input
+[validation example]
+
+// ❌ Bad: trust user input
+[bad example]
+```
+
+### Secrets Management
+
+```[language]
+// ✅ Good: use environment variables
+const apiKey = process.env.API_KEY;
+
+// ❌ Bad: hardcode secrets
+const apiKey = 'sk-1234567890abcdef';  // NEVER DO THIS
+```
+
+### [Security Concern 1]
+
+```[language]
+// ✅ Good: [secure approach]
+[code example]
+
+// ❌ Bad: [insecure approach]
+[code example]
+```
+
+---
+
+## 📝 Documentation Standards
+
+### Inline Comments
+
+```[language]
+// ✅ Good: explain WHY, not WHAT
+// [Explanation of why this approach was chosen]
+[code]
+
+// ❌ Bad: state the obvious
+// [Obvious statement about what code does]
+[code]
+```
+
+### API Documentation
+
+```[language]
+/**
+ * [Function description]
+ * @param {[type]} [paramName] - [Description]
+ * @returns {[type]} [Description]
+ * @throws {[ErrorType]} [When this error occurs]
+ */
+[function signature]
+```
+
+---
+
+## 🎯 Claude Code Usage Tips
+
+### Effective Prompting
+
+**Be Specific:**
+```
+❌ "Add validation"
+✅ "[Specific instruction with context]"
+```
+
+**Provide Context:**
+```
+❌ "Fix the bug"
+✅ "[Detailed description of the issue and context]"
+```
+
+**Break Down Complex Tasks:**
+```
+❌ "Build a complete [feature]"
+✅ "Let's build [feature] step by step:
+   1. [Step 1]
+   2. [Step 2]
+   3. [Step 3]"
+```
+
+---
+
+## 📦 Project-Specific Notes
+
+### [Custom Section 1]
+
+[Details specific to your project]
+
+### [Custom Section 2]
+
+[Details specific to your project]
+
+### File Exclusions
+
+Claude Code should NOT access:
+- [File/directory 1] - [Reason]
+- [File/directory 2] - [Reason]
+- [File/directory 3] - [Reason]
+
+See `.claudeignore` for complete list.
+
+---
+
+## 🚀 Common Commands
+
+### [Technology] Commands
+
+```bash
+# [Command description]
+[command]
+
+# [Command description]
+[command]
+```
+
+### Testing Commands
+
+```bash
+# Run all tests
+[command]
+
+# Run specific test file
+[command]
+
+# Run with coverage
+[command]
+```
+
+---
+
+**Last Updated**: [DATE]
+**Maintained By**: [TEAM/PERSON]
+
+---
+
+## Customization Instructions
+
+To adapt this template for your project:
+
+1. **Replace all [PLACEHOLDERS]** with your project-specific information
+2. **Remove sections** that don't apply to your project
+3. **Add custom sections** for project-specific needs
+4. **Update examples** to match your codebase patterns
+5. **Keep it concise** - aim for 15-20KB maximum
+6. **Review regularly** - update as your project evolves
+
+### Key Sections to Customize
+
+- [ ] Project Overview (name, tech stack, goals)
+- [ ] Architecture diagram
+- [ ] Coding standards (language-specific)
+- [ ] Testing framework and patterns
+- [ ] Security requirements
+- [ ] Common commands and workflows
+- [ ] File exclusions (.claudeignore)
+
+### Tips for Effective CLAUDE.md
+
+1. **Be Specific**: Generic advice is less useful than project-specific patterns
+2. **Show Examples**: Code examples are more valuable than descriptions
+3. **Update Regularly**: Keep it in sync with your evolving codebase
+4. **Link to Docs**: Reference external documentation when appropriate
+5. **Version Control**: Track changes to understand how guidelines evolve

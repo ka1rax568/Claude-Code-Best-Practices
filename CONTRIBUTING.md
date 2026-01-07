@@ -1,0 +1,663 @@
+# Contributing to Claude Code Best Practices
+
+Thank you for your interest in contributing to this project! This guide will help you get started.
+
+## Table of Contents
+
+- [Code of Conduct](#code-of-conduct)
+- [How Can I Contribute?](#how-can-i-contribute)
+- [Development Setup](#development-setup)
+- [Project Structure](#project-structure)
+- [Coding Standards](#coding-standards)
+- [Commit Message Guidelines](#commit-message-guidelines)
+- [Pull Request Process](#pull-request-process)
+- [Documentation Guidelines](#documentation-guidelines)
+- [Testing Requirements](#testing-requirements)
+
+---
+
+## Code of Conduct
+
+### Our Pledge
+
+We are committed to providing a welcoming and inclusive environment for all contributors, regardless of experience level, gender, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, religion, or nationality.
+
+### Our Standards
+
+**Positive behaviors include:**
+
+- Using welcoming and inclusive language
+- Respecting differing viewpoints and experiences
+- Gracefully accepting constructive criticism
+- Focusing on what is best for the community
+- Showing empathy towards other community members
+
+**Unacceptable behaviors include:**
+
+- Trolling, insulting/derogatory comments, and personal attacks
+- Public or private harassment
+- Publishing others' private information without permission
+- Other conduct which could reasonably be considered inappropriate
+
+### Enforcement
+
+Instances of unacceptable behavior may be reported to the project maintainers. All complaints will be reviewed and investigated promptly and fairly.
+
+---
+
+## How Can I Contribute?
+
+### Reporting Bugs
+
+**Before submitting a bug report:**
+
+- Check the [existing issues](https://github.com/yourusername/Claude-Code-Best-Practices/issues) to avoid duplicates
+- Collect relevant information (OS, Node.js version, Claude Code version, error messages)
+
+**When submitting a bug report, include:**
+
+- A clear, descriptive title
+- Steps to reproduce the issue
+- Expected behavior vs actual behavior
+- Screenshots or error logs if applicable
+- Your environment details
+
+### Suggesting Enhancements
+
+**Enhancement suggestions are welcome for:**
+
+- New custom commands or agents
+- Documentation improvements
+- New examples or use cases
+- Tool optimizations
+
+**When suggesting enhancements:**
+
+- Use a clear, descriptive title
+- Provide a detailed description of the proposed functionality
+- Explain why this enhancement would be useful
+- Include examples or mockups if applicable
+
+### Contributing Code
+
+**Good first issues:**
+
+- Documentation typos or clarifications
+- Adding code comments
+- Writing additional test cases
+- Improving error messages
+
+**More involved contributions:**
+
+- New custom commands
+- Additional examples
+- New documentation sections
+- Agent improvements
+
+---
+
+## Development Setup
+
+### Prerequisites
+
+- **Node.js** >= 18.0.0
+- **npm** >= 9.0.0
+- **Git**
+- **Claude Code CLI** ([installation guide](https://github.com/anthropics/claude-code))
+
+### Initial Setup
+
+```bash
+# 1. Fork the repository on GitHub (click "Fork" button)
+
+# 2. Clone your fork
+git clone https://github.com/YOUR_USERNAME/Claude-Code-Best-Practices.git
+cd Claude-Code-Best-Practices
+
+# 3. Add upstream remote
+git remote add upstream https://github.com/anthropics/Claude-Code-Best-Practices.git
+
+# 4. Install root dependencies
+npm install
+
+# 5. Install TDD demo dependencies
+cd examples/tdd-demo
+npm install
+cd ../..
+
+# 6. Run tests to verify setup
+npm test
+
+# 7. Run TDD example tests
+cd examples/tdd-demo && npm test && cd ../..
+```
+
+### Development Workflow
+
+#### 1. Create a Feature Branch
+
+```bash
+# Update your main branch
+git checkout main
+git pull upstream main
+
+# Create a feature branch
+git checkout -b feat/your-feature-name
+
+# Or for a bug fix
+git checkout -b fix/bug-description
+```
+
+#### 2. Make Your Changes
+
+Follow our [Coding Standards](#coding-standards) and:
+
+- Write tests first (TDD approach)
+- Keep changes focused and atomic
+- Update documentation as needed
+- Add examples if introducing new features
+
+#### 3. Test Your Changes
+
+```bash
+# Run linter
+npm run lint
+
+# Run formatter check
+npm run format:check
+
+# Run all tests
+npm test
+
+# Run TDD example tests
+cd examples/tdd-demo && npm run test:coverage && cd ../..
+```
+
+#### 4. Commit Your Changes
+
+Follow [Conventional Commits](#commit-message-guidelines):
+
+```bash
+# Stage your changes
+git add .
+
+# Commit with conventional message
+git commit -m "feat(scope): add new feature"
+
+# Or use our custom command
+# (if you've copied .claude/ to this repo)
+claude /conventional-commit
+```
+
+#### 5. Push and Create PR
+
+```bash
+# Push to your fork
+git push origin feat/your-feature-name
+
+# Go to GitHub and create a Pull Request
+# from your branch to upstream/main
+```
+
+### Running Specific Tests
+
+```bash
+# Run specific test file
+npm test -- path/to/test.spec.js
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run with coverage
+npm run test:coverage
+
+# Run TDD example tests only
+cd examples/tdd-demo
+npm test
+npm run test:watch
+npm run test:coverage
+```
+
+### Local Development Tips
+
+**Using Claude Code in this project:**
+
+```bash
+# The .claude/ directory contains configurations for this project
+# You can test changes to commands/agents locally:
+
+# 1. Make changes to .claude/commands/your-command.sh
+# 2. Ensure it's executable: chmod +x .claude/commands/your-command.sh
+# 3. Test it: claude /your-command
+
+# For agents:
+# 1. Edit .claude/agents/your-agent/AGENT.md
+# 2. Test by prompting Claude Code to use the agent
+```
+
+**Testing Documentation Changes:**
+
+```bash
+# Check markdown formatting
+npm run lint:markdown
+
+# Check for broken links (requires internet)
+npm run check:links
+
+# Spell check
+npm run spell:check
+```
+
+### Keeping Your Fork Updated
+
+```bash
+# Fetch upstream changes
+git fetch upstream
+
+# Update your main branch
+git checkout main
+git merge upstream/main
+
+# Push updates to your fork
+git push origin main
+
+# Rebase your feature branch (if needed)
+git checkout feat/your-feature
+git rebase main
+```
+
+### Troubleshooting
+
+**Tests failing after setup:**
+
+```bash
+# Clear node_modules and reinstall
+rm -rf node_modules package-lock.json
+npm install
+
+# For TDD example
+cd examples/tdd-demo
+rm -rf node_modules package-lock.json
+npm install
+cd ../..
+```
+
+**Claude Code not recognizing changes:**
+
+```bash
+# Restart Claude Code CLI
+# Changes to .claude/ files are loaded when CLI starts
+```
+
+**Permission issues with commands:**
+
+```bash
+# Ensure commands are executable
+chmod +x .claude/commands/*.sh
+```
+
+---
+
+## Project Structure
+
+```
+.
+├── .claude/                # Claude Code configurations
+│   ├── CLAUDE.md          # Main configuration file
+│   ├── settings.json      # Security and tool settings
+│   ├── commands/          # Custom slash commands
+│   └── agents/            # Specialized subagents
+├── docs/                  # Documentation files
+├── examples/              # Practical examples
+│   └── tdd-demo/         # TDD demonstration project
+├── templates/             # Reusable templates
+└── tests/                 # Project-level tests
+```
+
+**Key files:**
+
+- `.claude/CLAUDE.md`: Project context for Claude Code
+- `PLAN.md`: Development roadmap
+- `package.json`: Node.js project configuration
+
+---
+
+## Coding Standards
+
+### JavaScript/Node.js Style Guide
+
+We follow a strict style guide enforced by ESLint and Prettier:
+
+**Naming Conventions:**
+
+- `camelCase` for variables and functions
+- `PascalCase` for classes and constructors
+- `UPPER_SNAKE_CASE` for constants
+- Descriptive names (avoid single letters except loop counters)
+
+**Code Style:**
+
+- 2 spaces for indentation (no tabs)
+- Semicolons required
+- Single quotes for strings (except to avoid escaping)
+- Trailing commas in multi-line objects/arrays
+- Max line length: 100 characters
+
+**File Organization:**
+
+- One class/module per file
+- Group imports: built-in → external → internal
+- Export at bottom of file
+
+### Running Linters
+
+```bash
+# Check for style issues
+npm run lint
+
+# Auto-fix issues
+npm run lint:fix
+
+# Check formatting
+npm run format:check
+
+# Auto-format files
+npm run format
+```
+
+### Shell Scripts
+
+For custom commands (`.claude/commands/*.sh`):
+
+- Use `#!/bin/bash` shebang
+- Include descriptive comments
+- Use meaningful variable names
+- Handle errors gracefully
+- Exit with appropriate status codes
+
+---
+
+## Commit Message Guidelines
+
+We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
+
+### Format
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+### Types
+
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `style`: Code style changes (formatting, no logic change)
+- `refactor`: Code refactoring
+- `test`: Adding or updating tests
+- `chore`: Maintenance tasks (dependencies, build config)
+
+### Examples
+
+```
+feat(commands): add /review command for automated code review
+
+Implements comprehensive code review functionality including:
+- Security vulnerability detection
+- Performance analysis
+- Best practice checks
+
+Closes #42
+```
+
+```
+fix(agent): handle empty file lists in code-reviewer
+
+Previously crashed when no files were provided.
+Now returns early with helpful message.
+
+Fixes #58
+```
+
+```
+docs(security): expand deny list configuration examples
+
+Added examples for:
+- Multi-environment setups
+- Custom credential patterns
+- Large monorepo scenarios
+```
+
+### Commit Message Rules
+
+- Use imperative mood ("add feature" not "added feature")
+- First line ≤ 72 characters
+- Separate subject from body with blank line
+- Reference issues/PRs in footer
+- Explain _what_ and _why_, not _how_
+
+---
+
+## Pull Request Process
+
+### Before Submitting
+
+1. **Create a feature branch**
+
+   ```bash
+   git checkout -b feat/my-new-feature
+   ```
+
+2. **Make your changes**
+   - Follow coding standards
+   - Add tests for new functionality
+   - Update documentation
+
+3. **Run all checks**
+
+   ```bash
+   npm run lint
+   npm run format:check
+   npm test
+   ```
+
+4. **Commit your changes**
+
+   ```bash
+   git add .
+   git commit -m "feat(scope): description"
+   ```
+
+5. **Push to your fork**
+   ```bash
+   git push origin feat/my-new-feature
+   ```
+
+### Creating the Pull Request
+
+1. Go to the [original repository](https://github.com/yourusername/Claude-Code-Best-Practices)
+2. Click "New Pull Request"
+3. Select your fork and branch
+4. Fill out the PR template:
+
+```markdown
+## Description
+
+Brief description of changes
+
+## Type of Change
+
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Documentation update
+- [ ] Refactoring
+
+## Testing
+
+- [ ] All existing tests pass
+- [ ] New tests added for new functionality
+- [ ] Manual testing completed
+
+## Checklist
+
+- [ ] Code follows project style guidelines
+- [ ] Self-review completed
+- [ ] Comments added for complex logic
+- [ ] Documentation updated
+- [ ] No breaking changes (or documented)
+
+## Related Issues
+
+Closes #123
+```
+
+### Review Process
+
+1. **Automated checks**: CI will run tests and linters
+2. **Maintainer review**: A maintainer will review your code
+3. **Address feedback**: Make requested changes
+4. **Approval**: Once approved, a maintainer will merge
+
+### After Merge
+
+- Delete your feature branch
+- Update your fork's main branch
+- Celebrate! 🎉
+
+---
+
+## Documentation Guidelines
+
+### Writing Style
+
+- **Clear and concise**: Use simple language
+- **Active voice**: "Run the command" not "The command should be run"
+- **Examples**: Include code examples for complex concepts
+- **Structure**: Use headings, lists, and code blocks
+
+### Documentation Types
+
+**Conceptual docs** (`docs/*.md`):
+
+- Explain _why_ and _when_ to use features
+- Include diagrams if helpful
+- Link to related docs
+
+**Reference docs**:
+
+- Describe _what_ each option does
+- List all parameters
+- Include examples for each option
+
+**Tutorials** (`examples/*/README.md`):
+
+- Step-by-step instructions
+- Explain each step
+- Show expected output
+
+### Code Examples
+
+- **Runnable**: All examples should work if copy-pasted
+- **Commented**: Explain non-obvious code
+- **Complete**: Include imports and setup
+- **Tested**: Verify examples work
+
+### Markdown Formatting
+
+```markdown
+# Top-level heading (one per document)
+
+## Section heading
+
+### Subsection heading
+
+**Bold** for emphasis, _italic_ for terms
+
+`inline code` for commands, file names, variables
+
+\`\`\`bash
+
+# Code block with language specified
+
+npm install
+\`\`\`
+
+> Blockquote for important notes
+
+- Bullet lists
+- For items
+
+1. Numbered lists
+2. For sequential steps
+
+[Link text](URL)
+```
+
+---
+
+## Testing Requirements
+
+### Test Coverage
+
+- **New features**: Must include tests
+- **Bug fixes**: Add regression test
+- **Minimum coverage**: 80% (enforced by CI)
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Watch mode for development
+npm run test:watch
+
+# Coverage report
+npm run test:coverage
+```
+
+### Writing Tests
+
+**Structure:**
+
+```javascript
+describe("FeatureName", () => {
+  describe("methodName", () => {
+    it("should do something specific", () => {
+      // Arrange: Set up test data
+      const input = "test";
+
+      // Act: Execute the code
+      const result = myFunction(input);
+
+      // Assert: Verify results
+      expect(result).toBe("expected");
+    });
+  });
+});
+```
+
+**Best Practices:**
+
+- One assertion per test (when possible)
+- Descriptive test names
+- Test edge cases and error conditions
+- Use meaningful test data
+- Avoid test interdependencies
+
+---
+
+## Questions?
+
+- **GitHub Discussions**: [Ask a question](https://github.com/yourusername/Claude-Code-Best-Practices/discussions)
+- **Issues**: [Report a bug or suggest a feature](https://github.com/yourusername/Claude-Code-Best-Practices/issues)
+
+---
+
+**Thank you for contributing to Claude Code Best Practices!** 🙏
+
+Your contributions help developers around the world build better software with AI assistance.

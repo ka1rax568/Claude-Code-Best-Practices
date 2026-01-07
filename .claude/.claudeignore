@@ -1,0 +1,199 @@
+# .claudeignore
+# This file tells Claude Code which files and directories to ignore
+# Similar to .gitignore, but specifically for AI assistant access
+
+# =============================================================================
+# SECURITY-SENSITIVE FILES
+# =============================================================================
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Credentials and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+credentials.json
+secrets.json
+secrets/
+.secrets/
+*.crt
+*.der
+id_rsa
+id_dsa
+*.ppk
+auth.json
+serviceAccount.json
+
+# Cloud provider credentials
+.aws/credentials
+.aws/config
+.gcloud/
+.azure/
+
+# Package manager auth
+.npmrc
+.yarnrc
+.yarnrc.yml
+
+# =============================================================================
+# DEPENDENCIES AND THIRD-PARTY CODE
+# =============================================================================
+# Node.js
+node_modules/
+bower_components/
+jspm_packages/
+
+# Package manager lock files (optional - uncomment if too large)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# =============================================================================
+# BUILD ARTIFACTS AND GENERATED FILES
+# =============================================================================
+# Compiled output
+dist/
+build/
+out/
+*.tsbuildinfo
+*.js.map
+*.d.ts.map
+
+# Coverage reports
+coverage/
+.nyc_output/
+*.lcov
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =============================================================================
+# CACHE AND TEMPORARY FILES
+# =============================================================================
+# Cache directories
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+.tmp/
+
+# OS temporary files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# =============================================================================
+# IDE AND EDITOR FILES
+# =============================================================================
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+.vim/
+
+# =============================================================================
+# VERSION CONTROL
+# =============================================================================
+.git/
+.svn/
+.hg/
+
+# =============================================================================
+# LARGE OR BINARY FILES
+# =============================================================================
+# Media files (usually too large for context)
+*.mp4
+*.avi
+*.mov
+*.mp3
+*.wav
+*.flac
+
+# Images (uncomment if you want to exclude)
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+# *.bmp
+# *.ico
+# *.svg
+
+# Compressed archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# =============================================================================
+# TEST AND DEVELOPMENT FILES
+# =============================================================================
+# Test coverage and reports (generated files)
+test-results/
+junit.xml
+coverage.xml
+
+# Storybook
+storybook-static/
+
+# =============================================================================
+# DOCUMENTATION BUILD ARTIFACTS
+# =============================================================================
+# Generated documentation
+docs/_build/
+site/
+
+# =============================================================================
+# PROJECT-SPECIFIC EXCLUSIONS
+# =============================================================================
+# Add any project-specific files or directories that should be ignored
+# Example:
+# legacy/
+# archived/
+# experimental/
