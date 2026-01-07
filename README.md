@@ -22,6 +22,15 @@
 - **Token optimization strategies** to maximize efficiency in large codebases
 - **Security best practices** to protect sensitive data and maintain compliance
 
+## 🌏 Language Support
+
+This documentation is available in multiple languages:
+
+- **English** (default)
+- **[简体中文 (Simplified Chinese)](./README.zh.md)** - Complete Chinese localization
+
+All documentation, guides, templates, and examples are fully translated. Use the language switcher at the top of each document to navigate between versions.
+
 ## ✨ Key Features
 
 ### 🔧 Ready-to-Use Configurations
@@ -88,6 +97,8 @@ cp -r .claude /path/to/your/project/
 
 ## 📖 Documentation Structure
 
+All documentation is available in English and Chinese (简体中文):
+
 ```
 docs/
 ├── 01-getting-started.md           # Installation and initial setup
@@ -96,6 +107,8 @@ docs/
 ├── 04-git-workflow.md              # Git integration patterns
 ├── 05-prompt-engineering.md        # Effective prompting techniques
 └── 06-advanced-usage.md            # Hooks, MCP servers, extensions
+
+Each file has a Chinese version: *.zh.md
 ```
 
 ## 🎓 Learning Path
