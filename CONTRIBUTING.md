@@ -12,6 +12,7 @@ Thank you for your interest in contributing to this project! This guide will hel
 - [Commit Message Guidelines](#commit-message-guidelines)
 - [Pull Request Process](#pull-request-process)
 - [Documentation Guidelines](#documentation-guidelines)
+- [Translation Guidelines](#translation-guidelines)
 - [Testing Requirements](#testing-requirements)
 
 ---
@@ -596,6 +597,264 @@ npm install
 
 [Link text](URL)
 ```
+
+---
+
+## Translation Guidelines
+
+We maintain complete translations of all documentation in multiple languages. Currently supported:
+
+- **English** (primary/source language)
+- **简体中文 (Simplified Chinese)**
+
+### Translation Standards
+
+When translating documentation, follow these guidelines to maintain consistency:
+
+#### File Naming Convention
+
+```
+English file:  filename.md
+Chinese file:  filename.zh.md
+```
+
+All translated files should have the `.zh.md` suffix.
+
+#### Language Switcher
+
+**Every translated file must include a language switcher at the top:**
+
+```markdown
+> **语言 (Language)**: [English](filename.md) | 简体中文
+```
+
+For the English source file:
+
+```markdown
+> **Language (语言)**: English | [简体中文](filename.zh.md)
+```
+
+#### What to Translate
+
+**DO translate:**
+
+- Headings and subheadings
+- Body text and descriptions
+- Comments within code blocks (if they explain concepts)
+- Image alt text and captions
+- Table content (descriptive columns)
+- Blockquote content
+
+**DO NOT translate:**
+
+- Code syntax and keywords
+- File paths and directory names
+- Command-line commands
+- URLs (except anchor links)
+- Technical terms commonly used in English:
+  - Git, npm, Node.js, API, JWT, OAuth
+  - Function/variable names in code examples
+  - Configuration file names (`.env`, `package.json`)
+- Version numbers and dates
+- Badge URLs and shields
+
+#### Code Block Guidelines
+
+**Preserve all code blocks exactly:**
+
+```javascript
+// ✅ Good: Translate comments, keep code unchanged
+// 这是一个示例函数
+function getUserById(id) {
+  return database.users.find(id);
+}
+```
+
+**For bash commands, keep commands but translate comments:**
+
+```bash
+# 克隆仓库
+git clone https://github.com/user/repo.git
+
+# 安装依赖
+npm install
+```
+
+#### Markdown Formatting
+
+**Preserve exactly:**
+
+- Heading levels (`#`, `##`, `###`)
+- Code fence markers (` ``` `)
+- List formatting (bullets, numbers, indentation)
+- Table structure
+- Line breaks and spacing
+- HTML comments
+- Anchor links (update to Chinese heading anchors)
+
+#### Technical Terminology
+
+Use standard Chinese translations for common technical terms:
+
+| English | Chinese (简体中文) |
+|---------|-------------------|
+| repository | 仓库 |
+| commit | 提交 |
+| pull request | Pull Request (keep English) |
+| branch | 分支 |
+| documentation | 文档 |
+| configuration | 配置 |
+| security | 安全性 |
+| best practices | 最佳实践 |
+| workflow | 工作流程 |
+| testing | 测试 |
+
+**Keep in English:**
+- Product names: Claude Code, GitHub, VS Code
+- Technical acronyms: API, CLI, TDD, CI/CD
+- File extensions: .js, .md, .json
+
+### Translation Workflow
+
+#### 1. Create Translation
+
+```bash
+# Create feature branch
+git checkout -b i18n/translate-filename
+
+# Create Chinese version
+cp docs/filename.md docs/filename.zh.md
+
+# Translate content following guidelines above
+# Add language switcher to both files
+```
+
+#### 2. Verify Translation Quality
+
+**Checklist:**
+
+- [ ] Language switcher added to both English and Chinese files
+- [ ] All headings translated
+- [ ] All body text translated
+- [ ] Code blocks preserved exactly (except comments)
+- [ ] File paths and commands unchanged
+- [ ] Technical terms handled appropriately
+- [ ] Markdown formatting identical
+- [ ] Anchor links updated for Chinese headings
+- [ ] No translation artifacts (e.g., escaped characters)
+
+#### 3. Test Rendering
+
+```bash
+# Preview markdown locally
+# Check that links work, formatting is correct
+
+# Verify language switcher links work
+# - Click English → Chinese link
+# - Click Chinese → English link
+```
+
+#### 4. Submit Translation PR
+
+```bash
+# Commit with clear message
+git add docs/filename.md docs/filename.zh.md
+git commit -m "feat(i18n): add Chinese translation for filename.md"
+
+# Push and create PR
+git push origin i18n/translate-filename
+```
+
+**PR Title Format:**
+```
+feat(i18n): add Chinese translation for [filename]
+```
+
+**PR Description Template:**
+```markdown
+## Translation Summary
+
+Translates `filename.md` to Chinese (简体中文)
+
+### Files Changed
+- Added: `docs/filename.zh.md` (XXX lines)
+- Modified: `docs/filename.md` (added language switcher)
+
+### Translation Checklist
+- [x] Language switcher added
+- [x] All content translated
+- [x] Code blocks preserved
+- [x] Technical terms handled correctly
+- [x] Formatting verified
+- [x] Links tested
+
+### Review Notes
+[Any specific areas that need review or context]
+```
+
+### Updating Translations
+
+When English source files are updated:
+
+1. **Track changes**: Note what sections were modified
+2. **Update Chinese version**: Apply equivalent changes to `.zh.md` file
+3. **Maintain consistency**: Ensure translation style remains consistent
+4. **Commit together**: Update both files in same commit
+
+```bash
+git add docs/filename.md docs/filename.zh.md
+git commit -m "docs: update filename.md and Chinese translation"
+```
+
+### Translation Quality Standards
+
+**Professional Quality:**
+- Natural, fluent Chinese (not literal word-by-word translation)
+- Appropriate technical terminology
+- Consistent tone and style
+- Grammar and punctuation correct
+
+**Accuracy:**
+- Meaning preserved from English source
+- Technical accuracy maintained
+- No missing or added content
+- Context-appropriate translations
+
+**Consistency:**
+- Terminology consistent across all documents
+- Formatting consistent with English source
+- Style consistent with existing translations
+
+### Translation Tools
+
+**Recommended workflow:**
+1. Use AI assistance (Claude Code) for initial translation
+2. Manual review for technical accuracy
+3. Native speaker review (when possible)
+4. Test all links and code examples
+
+**Example prompt for Claude Code:**
+```
+Translate this documentation to simplified Chinese following our guidelines:
+1. Keep all code blocks, file paths, and commands in English
+2. Translate headings and descriptive text
+3. Preserve all markdown formatting
+4. Add language switcher at top
+5. Use standard technical term translations
+
+[paste English content]
+```
+
+### Adding New Languages
+
+To add support for a new language:
+
+1. **Propose the language**: Open a discussion issue
+2. **Get approval**: Wait for maintainer approval
+3. **Establish conventions**: Define file suffix (e.g., `.fr.md` for French)
+4. **Create initial translations**: Start with high-priority docs (README, getting started)
+5. **Update language switcher**: Add new language to switcher template
+6. **Document standards**: Add language-specific guidelines here
 
 ---
 
