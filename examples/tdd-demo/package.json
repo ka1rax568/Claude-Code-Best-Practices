@@ -21,7 +21,7 @@
   "author": "Claude Code Best Practices",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^29.7.0",
+    "jest": "^30.2.0",
     "supertest": "^6.3.3"
   },
   "dependencies": {
