@@ -16,6 +16,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GitHub Actions CI/CD pipeline with comprehensive checks
 - Badge collection in README.md
 
+## [1.1.0] - 2026-01-08
+
+### Added
+
+- **Complete Chinese (简体中文) Localization** - Full bilingual support
+  - 21 documentation files translated (9,915+ lines)
+  - All guides: Getting Started, Security, Token Optimization, Git Workflow, Prompt Engineering, Advanced Usage
+  - Root documentation: README, CONTRIBUTING, CHANGELOG, PLAN, PROJECT_STATUS
+  - Templates: PR review checklist, TDD workflow, CLAUDE.md template
+  - Examples: TDD demo documentation and workflow
+  - Project context: `.claude/CLAUDE.md` and template
+- **Language Switchers** - Bidirectional navigation on all documents
+- **Translation Guidelines** - Comprehensive contributor guidelines
+  - File naming conventions and standards
+  - What to translate vs preserve (code, paths, technical terms)
+  - Quality verification checklist
+  - PR templates for translation submissions
+  - Technical terminology translation table
+  - Recommended tools and workflows
+- **Enhanced README** - Prominent language support section
+- **Documentation Updates** - All English files updated with language switchers
+
+### Changed
+
+- README structure enhanced with dedicated Language Support section
+- CONTRIBUTING.md expanded with 259-line Translation Guidelines section
+- Documentation structure notes now indicate bilingual availability
+
+### Internationalization (i18n)
+
+- **Total Translation Coverage**: 100% of documentation
+- **Lines Translated**: 9,915+ lines to simplified Chinese
+- **Files Added**: 21 `.zh.md` files
+- **Languages Supported**: English (primary), 简体中文 (Simplified Chinese)
+- **Translation Quality**: Professional, technically accurate, consistent terminology
+- **Maintenance**: Guidelines established for keeping translations synchronized
+
 ## [1.0.0] - 2026-01-07
 
 ### Added
@@ -105,9 +142,10 @@ See [docs/01-getting-started.md](docs/01-getting-started.md) for detailed setup 
 
 ## Version History Summary
 
-| Version | Date       | Key Changes                           | Impact |
-| ------- | ---------- | ------------------------------------- | ------ |
-| 1.0.0   | 2026-01-07 | Initial release with complete toolkit | Major  |
+| Version | Date       | Key Changes                                    | Impact |
+| ------- | ---------- | ---------------------------------------------- | ------ |
+| 1.1.0   | 2026-01-08 | Complete Chinese localization (21 files)       | Major  |
+| 1.0.0   | 2026-01-07 | Initial release with complete toolkit          | Major  |
 
 ---
 
